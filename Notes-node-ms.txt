@@ -1,0 +1,3759 @@
+JAVA SCRIPT:
+
+java script object based, functional style,event driven , async programming language.
+
+version
+ECMA -Committe
+1996---1997
+java script 1.0 - ES 1.0
+
+ES 3.0 -1999
+
+ES 4.0 2007
+
+ES 5.0 2008
+
+ES 6.0 -2015
+
+ES 7.0,8.0
+
+Applications of java script :
+
+Why js was created?
+
+ to create dynamic web documents and manipulate web documents- HTML
+
+2008- js started moving towards building network applications.-nodejs
+
+Now javascript is every where.
+
+
+Learning path:
+
+es 6:
+
+1. java  script fundamentals
+2. java script functional programming 
+3. Object based features and implementation
+4. DOM 
+5. NETWORK Progamming - ajax
+etc....
+
+javascript runtime :
+
+where you are running javascript code.
+
+1. embeded runtime.
+   the runtime embeded into another software.
+ browser
+v8-name of the runtime, inside chrome.
+
+2.standalone runtime.
+
+  node js -v8.
+
+
+Lab:
+
+-node js
+-vs code
+-docker , docker compose
+
+
+
+1. java  script fundamentals
+
+variable,types, values.
+
+javascript is untyped/dyamic typed language.
+
+keyword variableName=value(literals)
+
+var | let | const | this | variablename=literal
+
+var-es5
+let and const -es6 to replace var.
+
+this - for object variables
+
+literals - values: based on literal only the type of variable is decided during runtime.
+
+types of literals
+
+1.string
+2.number
+3.boolean
+4.undefined
+5.nan
+6.infinity
+7.null
+8.function
+9.object
+
+types ;
+
+1.string
+2.number
+3.boolean
+4.undefined
+5.funciton
+6.object
+
+Strings:
+
+//how to declare variables.
+//strings
+//strings can be encapuslated in three ways -single,double,backtick
+
+let firstName='Subramanian';
+let lastName="Murugan";
+let city=`Coimbatore`;
+console.log("Name" + firstName + lastName + city);
+console.log("Name" , firstName , lastName , city);
+//ES 6 : ${} -string interpolatation.
+console.log(`Name ${firstName}  ${lastName}  ${city}`);
+//use case of back tick : multiline string literal
+let title ='IBM'
+let document=`
+        <html>
+            <head>
+                <title>
+                      ${title}
+                </title>
+            </head>
+            <body>
+            </body>
+        </html>
+`
+console.log(document);
+
+
+
+Numbers:
+numbers : 64 bit double.
+
+
+
+NaN :
+not a number , which is number which holds numerical computation
+error results.
+Nan if you get, your code is buggy code : runtime 
+
+if you get nan you must fix it.
+
+When you will get NaN?
+
+use case 1; when you do compuation against undefined.
+
+let qty;
+let price = 1000;
+let totalPrice = qty * price;
+
+
+
+booleans:
+true/false
+decision making : if...else, if..else if...else
+
+/**
+ * Truthy values:
+ *  In javascript everything is true execpt the following values
+ * 
+ * fasly values
+ *  1.boolean false
+ *  2.Empty string "" ,''
+ *  3.0
+ *  4.undefined
+ *  5.NaN
+ *  6.null
+
+
+Opeartors:
+.........
+
+ == , === !=,!==,!,!!
+
+ == : compares based content only, it does not take care about type system.
+
+if you compare only value, then it is not right comparsion.
+
+== consider buggy operator.
+
+=== : compares both value + type : this is right comparsion:
+
+Best practice : dont use == for comparsion.
+
+!= : dont use
+!== : use
+
+//operators
+
+//==
+let x = 10;
+let y = 10;
+if (x == y) {
+    console.log('X and Y are equal')
+} else {
+    console.log('X AND Y not equal')
+}
+
+let a = "10"; //string
+let b = 10; //number
+if (a === b) { // string == number
+    console.log('A and B are equal')
+} else {
+    console.log('A AND B not equal')
+}
+
+
+//const  vs let
+//let can allow to reinitalize the values at any point of time in program.
+
+let myvar = 10;
+console.log(`${typeof myvar} and its value is ${myvar}`)
+myvar = 'hello';
+console.log(`${typeof myvar} and its value is ${myvar}`)
+myvar = true;
+console.log(`${typeof myvar} and its value is ${myvar}`)
+
+//constants ; not able to reinitalize.
+
+const mynewVar = 10;
+console.log(`${typeof mynewVar} and its value is ${mynewVar}`)
+//mynewVar =9000;
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Programming pardagims:
+
+1.Object oriented
+2.procedural programming
+3.functional programming
+.......
+
+ANY PL - based on any of programming pardagim
+
+c - pp.
+java - oo
+
+languages may follow one paradigm - c ++
+
+languages may follow many paradigm in one place - hybrid paradgims.
+
+js is multi paradgim.  
+
+  - object based
+  - functional style 
+  - event driven style
+
+js functional style features:
+
+- function is abstraction in js.
+- function is value/literal
+    - can be assigned to a variable
+    - can be passed a parameter 
+    - can be returned as return value.
+
+ES 6 ARROW FUNCTIONS:
+....................
+
+ES 6 ARROW functions are replacment of function declaration syntax in es 5.
+
+let hello = function(message = 'default') {
+    console.log('greet', message)
+    return 'greeter';
+};
+console.log(hello('hello'))
+
+
+Function as parameter;
+
+function can be as a value to another function.
+
+
+
+Objects:
+-create objects
+-object properties
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+What is node.js?
+
+node.js is platform to run javascript programms.
+
+How java script is executed under the hood?
+
+source code - .java - .js
+ 
+compiled code .class 
+
+executable code .os specific.
+
+pl compilers
+-separte  -
+ code---compiler---compiled code(disk file).
+
+-in memory compilation
+ code --compiler---compiled code(RAM)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Concurrency: Threadings
+.......................
+
+javascript is not multi threaded.
+Like java,c++ we cant create threads - js single threaded.
+
+javascript was not designed for io operations.
+
+The first IO Was introduced in 2005 - ajax.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Blocking IO and non blocking IO : Sync and async 
+..........................................
+
+Blocking IO:
+
+Input/output (IO) refers to interaction with devices such as a hard drive, network or database. 
+
+Generally anything that is not happening in the CPU is called IO.
+
+When you call an API that requests data from IO, you will not get a response instantly, but with some delay. This delay can be very small for requesting a file on a hard drive, and much longer when requesting data from a network. 
+
+This is because the data you request from IO devices has to travel longer to the caller. For instance:
+A file stored on a hard drive must be transferred through SATA cables and main board buses to the CPU
+
+The data from a network resource located on a server far away must travel through network cables, routers and eventually the network interface card (NIC) in your computer to the CPU.
+
+
+Calling an API that requests data from IO will cause the running thread to “block”, i.e. 
+
+it is waiting until the requested data has returned to the caller.
+
+When a thread is blocked in Linux, it will be put in a Sleep state by the kernel until data has returned to the caller
+
+Threads in sleep state immediately give up its access to the CPU, so to not waste CPU time.
+
+After IO is ready, the thread is taken out of the Sleep state and put in Runnable state.
+
+Threads in this state are eligible to be executed on the CPU again.
+
+The thread scheduler will put the thread on a CPU when one is available. 
+
+The process of taking threads on and off the CPU is called context switching.
+
+
+Why non-blocking IO?
+
+The main benefit of non-blocking IO is that we need less threads to handle the same amount of IO requests.
+
+When multiple calls to IO are done using blocking IO, for each call a new thread is created. 
+
+A thread costs around 1MB, and there are some costs due to context switching. 
+
+If you have a web server that handles 50k connections per second,
+
+a thread per connection can be quite expensive.
+
+
+Types of blocking
+  There are actually two types of thread blocking:
+
+1.CPU-bound blocking
+2.IO-bound blocking
+
+CPU-bound blocking
+In this case the thread gets blocked because of some CPU intensive task it performs takes more time than “instantly”. 
+
+For example when generating a bunch of prime numbers or rendering a 3d model. With CPU-bound blocking the thread is blocked because it’s actively being executed on the processor.
+
+
+IO-bound blocking
+
+Here, the thread gets blocked because it has to wait for data to return from an IO source, such as a network or a hard drive. 
+
+The kernel will notice that there is no data available from IO and will therefore put the thread in some “sleep” state. Hence, with IO-bound blocking the thread is not¹ actively being executed on the processor.
+
+
+Non-blocking IO
+
+APIs that use blocking IO will block the thread until data from IO has returned.
+
+ So what happens when you call a non-blocking API? Very well, it returns instantly and will not block the thread. 
+
+This means the thread can immediately continue executing the code that comes after calling the API.
+
+When data has returned from IO, the caller will be notified that the data is ready. 
+
+This is generally done with a callback function that has access to the returned data.
+
+
+
+Network IO and sockets:
+
+To understand how non-blocking IO works under the hood we first need some understanding of how IO works at low level. 
+
+A common use case for non-blocking IO is network IO, so it is best explained in this context. 
+
+
+At kernel level a socket is used as an abstraction to communicate with a NIC.
+
+Socket is entry and exit point of data transmission from hardware to os
+
+
+ This socket takes care of reading and writing data to/from the NIC, which in turn sends the data over the UTP cable on its way to the internet. 
+
+For example, if you go to a URL in your browser; at low level the data in your HTTP request is written to a socket using the send(2) system call. 
+
+When a response is returned, the response data can be read from that socket using the recv(2) 
+ system call.
+ The important thing to understand here is that when data has returned from network IO, it is ready to be read from the socket.
+
+
+Blocking are implemented at os level using os socket apis.
+ eg : send and recv ------->are blocking apis
+
+if any language uses these api as sys call under hood , those api are blocking apis
+
+if you take java
+
+ readFile()---------send()------>socket-------|
+
+
+Non-blocking IO under the hood
+
+
+Most non-blocking frameworks use an infinite loop that constantly checks (polls) if data is returned from IO.
+
+This is often called the event loop. 
+
+An event loop is literally a while(true) loop that in each iteration will check if data is ready to read from a network socket. 
+
+Technically, sockets are implemented as file descriptors (FD) on UNIX systems.
+
+It is therefore better to say that a FD is checked for ready data. 
+
+The list of FDs that you want to check for ready data is generally called the interest list.
+
+
+Operatings systems provide event loop construct for making non blocking io:
+
+
+Let’s zoom a bit in on the event loop:
+......................................
+
+ Each (major) operating system provides kernel level APIs to help create an event loop.
+
+In Linux there is epoll or io_uring, BSD uses kqueue and Windows has IOCP. Each of these APIs is able to check FDs for ready data with a computational complexity of around.
+
+
+libuv:
+
+It is platform abstraction lib
+
+libuv is a multi-platform support library with a focus on asynchronous I/O.
+
+
+Event loop:
+
+In event-driven programming, an application expresses interest in certain events and respond to them when they occur. The responsibility of gathering events from the operating system or monitoring other sources of events is handled by libuv, and the user can register callbacks to be invoked when an event occurs. The event-loop usually keeps running forever. In pseudocode:
+
+while there are still events to process:
+    e = get the next event
+    if there is a callback associated with e:
+        call the callback
+
+
+Some examples of events are:
+
+File is ready for writing
+A socket has data ready to be read
+A timer has timed out
+
+
+lets code in node:
+
+how to implement async /non blocking code.
+
+1.you must have high level non blocking api .
+
+2.You must register callback for event notification.
+
+
+Apis for non blocking
+
+1.timers
+2.io api
+  -fs
+  -network
+
+
+timers;
+
+1.settimeout---event registration happens in side event queue---
+  ----------request---------libuv-----iocp--------windows kernal space----->|<-eventloop-- fd---waiting for cup timeout
+2.setinterval
+
+
+callback ;
+
+ function as parameter.
+
+coding :
+how to implement non blocking
+
+we have differnt styles
+
+1.callback style
+2.promise style
+3.async await.
+
+
+
+//timer
+
+function sayHello() {
+    console.log('Hello')
+}
+
+sayHello();
+setTimeout(function () {
+    console.log('called latter')
+}, 5000);
+sayHello();
+
+// function delay(callback) {
+//     // setTimeout(function () {
+//     //     callback();
+//     // }, 6000)
+//     setTimeout(callback, 6000);
+// }
+const { log } = console;
+const delay = callback => setTimeout(callback, 6000, 'fake Response');
+// delay(response =>log(response))
+delay(log);
+
+
+const { log } = console;
+let intervalId;
+const tick = callback => {
+    intervalId = setInterval(callback, 1000, Math.random());
+}
+const stopTimer = () => clearInterval(intervalId);
+setTimeout(stopTimer, 10000);
+tick(log);
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+node specific areas:
+...................
+node objects
+Module system -common js
+event emitters
+io 
+
+
+
+js has lot of built objects
+
+Object
+wrappers-string,numbers,boolean
+Math
+JSON
+...
+dom objects
+
+Window
+document
+history
+
+xhr -ajax
+
+how to run js code in node
+
+1.node command
+2.node repl command
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Modularity:
+..........
+
+In java Modularity , is presented via "Packages"
+
+Package organize the code  logically.
+
+Customer.java
+
+package com.ibm.cms
+
+public class Customer{}
+
+Java organizes code folders and files Physically.
+
+d:/javaapps/src/
+    com/ibm/cms/Customer.java
+
+
+What about javascript Modularity?
+
+ Javascript is file based modularity physically
+ but logically there is no such modularity at language level.
+
+ collection of variable declarations and function.
+
+Once js started growing in large scale, dev struck to organize code.
+
+2000, Smart developers started thinking about how to modualrize js code.
+ 
+
+Module design patterns came.
+
+1.Namespace design pattern : 2000 : jquery
+2.AMD -Async Module Defintion : dojo
+---------------------------------------------------------
+3.CJS - Common JS =  namespace + amd
+4.ES 6 Module design pattern  = amd + cjs
+------------------------------------------------------------
+5.System = AMD = CJS + ES 6
+6.UMD = NAMESPACE + AMD + CJS = ES 6
+
+
+only two design patterns are used in development
+
+1.CJS - Common JS =  namespace + amd
+2.ES 6 Module design pattern  = amd + cjs
+
+CJS ; implemented inside node js. node supports commonjs by default.
+
+I can organize the code , based on these patterns, but what about runtimes?
+  js runtime never suppport these patterns directly then each design pattern is lib.
+
+ Loaders : it is simple js lib to help link and load js files.
+
+
+lets start cjs first;
+......................
+
+cjs is built in node js.
+node supports cjs in built. no separate loader or linker is required
+but if you run cjs code on browsers , we need loaders.
+
+
+
+
+Common js:
+
+1.How to share code
+  exports
+  module.exports
+
+2.How to link files
+  require()
+ 
+code : 
+
+ variable declaration
+ function declaration
+ class declaration
+
+
+function require(fileName){
+
+
+ return something;//code
+}
+
+Object o =require()
+
+what is exports?
+
+
+exports is just variable,what is it s value
+
+
+ module.exports
+  
+points:
+
+1.module.exports does not pack code inside literal object.
+2.module.exports returns the code as it is.
+   if you have funciton/variable/array/class which will be returned as it is.
+3.We cant return more than one thing at time.
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+callback nesting;
+.................
+
+The output of one callback will be input to another callback.
+//arrow
+const getUser = (resolve, reject) => {
+    //biz logic
+    let fakeUser = {
+        id: 1,
+        name: 'admin'
+    };
+    //let fakeUser=null ; to test rejectionl̥
+    let error = {
+        code: 500,
+        message: 'User not found!!'
+    }
+    //
+    if (fakeUser) {
+        setTimeout(resolve, 100, fakeUser);
+    } else
+        setTimeout(reject, 100, error);
+
+};
+
+//another api
+const login = (user, resolve, reject) => {
+    let error = {
+        code: 500,
+        message: 'Login failed'
+    };
+    let status = 'Login Success'
+    if (user.name === 'admin') {
+        setTimeout(resolve, 100, status);
+    } else
+        setTimeout(reject, 100, error);
+}
+
+let showPage = (status, resolve, reject) => {
+
+    let page = '';
+    if (status === 'Login Success') {
+        page = 'Admin Page'
+        setTimeout(resolve, 100, page);
+    } else {
+        page = 'Guest Page';
+        setTimeout(reject, 100, page);
+    }
+
+}
+
+getUser(user => {
+    console.log('Get user is called')
+    //nested callback
+    login(user, status => {
+        console.log('login is called')
+        showPage(status, apage => {
+            console.log(apage)
+        }, gpage => {
+            console.log(gpage);
+        });
+    }, err => {
+        console.log(err)
+    });
+}, error => {
+    console.log(error);
+});
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+callback hell;
+.............
+
+getUser(user => {
+    console.log('Get user is called')
+    //nested callback
+    login(user, status => {
+        console.log('login is called')
+        showPage(status, apage => {
+            console.log(apage)
+        }, gpage => {
+            console.log(gpage);
+        });
+    }, err => {
+        console.log(err)
+    });
+}, error => {
+    console.log(error);
+});
+
+Questions:
+
+1.Whether this is able to understand quickly
+2.Whether this code is able to debug
+3.Whehter this code is scalable?
+4.whether this code is maintaiable?
+
+
+  "No" : This is what we call as "Callback hell".
+
+The way we write the code is called callback hell
+
+
+fs.readdir(source, function (err, files) {
+  if (err) {
+    console.log('Error finding files: ' + err)
+  } else {
+    files.forEach(function (filename, fileIndex) {
+      console.log(filename)
+      gm(source + filename).size(function (err, values) {
+        if (err) {
+          console.log('Error identifying file size: ' + err)
+        } else {
+          console.log(filename + ' : ' + values)
+          aspect = (values.width / values.height)
+          widths.forEach(function (width, widthIndex) {
+            height = Math.round(width / aspect)
+            console.log('resizing ' + filename + 'to ' + height + 'x' + height)
+            this.resize(width, height).write(dest + 'w' + width + '_' + filename, function(err) {
+              if (err) console.log('Error writing file: ' + err)
+            })
+          }.bind(this))
+        }
+      })
+    })
+  }
+})
+
+
+callback hell is other wise called as doom of pyrbid.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+///////////////////////////////////////////////////////////////////////////////////////////
+
+How to write better callback programming /async/non blocking ? or How to avoid callback hell?
+
+
+In 2005, JQUERY team started with working complex callback patterns, they found callback
+hell problem.
+
+They proposed a  Design pattern to write better callback programming(Async) programming.
+
+  "Promise".
+
+Promise is design pattern which hides complexity of callback patterns
+
+
+SInce Promise is design pattern, many people have implemented Promise design pattern.
+
+1.JQuery -first promise implementation
+2.many libs and frameworks
+
+2012 E6 Commit introduced promise design pattern  as  "Promise" Object  in javascript.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Promises and non blocking,async and callback hell issues:
+.........................................................
+
+features of Promise Object:
+
+1.Promise by deafult is Async. Which implements timer api with 0 ms .
+
+Promise can be used with any async implementations.
+
+
+
+Promise Implemenation:
+
+1. Create Promise Object from Promise contructor
+2. Create PRomise object from factory apis 
+
+Promise object methods:
+1.then - success
+2.catch - errors
+3.finally - clean up
+4.resolve
+5.reject
+6.all
+7.race
+
+
+
+Lets code using Promise
+
+Promise Object creations:
+
+1.factory apis.
+ resolve
+ reject
+ both
+
+
+callback hell and promises:
+..............................
+
+//arrow
+const getUser = () => {
+    //biz logic
+    let fakeUser = {
+        id: 1,
+        name: 'admin'
+    };
+    //let fakeUser=null ; to test rejectionl̥
+    let error = {
+        code: 500,
+        message: 'User not found!!'
+    }
+    //
+    return new Promise((resolve, reject) => {
+        let user = {
+            id: 2,
+            name: 'admin'
+        };
+        if (user) {
+            setTimeout(resolve, 2000, user);
+        } else {
+            setTimeout(reject, 100, { id: 400, message: 'something went wrong' })
+        }
+    })
+
+};
+//another api
+const login = user => {
+    let error = {
+        code: 500,
+        message: 'Login failed'
+    };
+    let status = 'Login Success'
+    return new Promise((resolve, reject) => {
+        if (user.name === 'admin') {
+            setTimeout(resolve, 100, status);
+        } else
+            setTimeout(reject, 100, error);
+    });
+
+}
+
+let showPage = status => {
+
+    return new Promise((resolve, reject) => {
+        let page = '';
+        if (status === 'Login Success') {
+            page = 'Admin Page'
+            setTimeout(resolve, 100, page);
+        } else {
+            page = 'Guest Page';
+            setTimeout(reject, 100, page);
+        }
+    });
+
+
+}
+
+const { log } = console;
+getUser()
+    .then(user => {
+        return login(user);
+    })
+    .then(status => {
+        console.log(status)
+    })
+    .catch(log)
+    .finally(() => console.log('login done'))
+
+getUser()
+    .then(user => login(user))
+    .then(status => console.log(status))
+    .catch(log)
+    .finally(() => console.log('login done'))
+
+getUser()
+    .then(login)
+    .then(log)
+    .catch(log)
+    .finally(() => console.log('login done'))
+
+
+// getUser(user => {
+//     console.log('Get user is called')
+//     //nested callback
+//     login(user, status => {
+//         console.log('login is called')
+//         showPage(status, apage => {
+//             console.log(apage)
+//         }, gpage => {
+//             console.log(gpage);
+//         });
+//     }, err => {
+//         console.log(err)
+//     });
+// }, error => {
+//     console.log(error);
+// });
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+async and await ; es 7 keywords
+
+
+Promise Hell: Promise has limitions;
+......................
+
+1.Promise is still  complex when you start scalling complex async operations.
+
+2.Which is not readable ,which uses lot of then, catch blocks
+
+In order to write even simple complex async work flows ES 7 introduced
+a concept called "async await" keywords
+
+
+ It is simplest pattern of Promises.
+ It is promise driven only.
+
+         "Sync style of Async Code" 
+
+async key must be used with function declaration.
+await is used to pause async calls
+
+
+getUser()
+    .then(login)
+    .then(log)
+    .catch(log)
+    .finally(() => console.log('login done'))
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+async ;
+
+-used in front of function declaration ; those functions are called async function.
+
+Node and Modularity:
+....................
+
+node is highly modular platform, you can write modular applications
+node by default supports cjs module system.
+
+in node module is called "node module'
+
+
+Types of modules:
+
+1.Custom module
+  Written you , eg: OrderController....
+  exports,module.exports
+2.in built modules
+   Modules are supplied by node , which are supplied during node installation.
+3.Third party modules
+   provided by third parties, like frameworks,libs etc...
+
+
+
+1.node in built modules
+
+
+1.os module
+2.events module
+3.file system module
+4.path
+5.http module
+
+
+
+2.os module provides 
+The os module provides operating system-related utility methods and properties.
+
+//os module
+const os  = require('os');
+
+console.log('Total CPUs')
+console.log(os.cpus());
+console.log('Arch ',os.arch())
+
+
+./ vs ''
+.........
+
+ require('./services/TODOService');
+  ->here you can see ./
+  ./ -current dir
+ require('os'); => 
+  -here no ./ 
+
+Why?
+
+Note : if you are java devp, you know the classpath , how it works?
+
+
+
+require('os');
+
+Node internally uses a search algorthim,node always looks the folder called
+ "node_modules" in the current project, if not , then it searches, the node in built 
+installtion folder---c:/pf/node/node_nodules--if it finds it will pick up from there else it will throw error.
+
+require('./services/TODOService');
+   it will lookup in the current dir or sub dirs only.
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Event Emitter module;
+
+how to build application event driven programming.
+
+Much of the Node.js core API is built around an idiomatic asynchronous event-driven architecture in which certain kinds of objects (called "emitters") emit named events that cause Function objects ("listeners") to be called.
+
+
+how to create custom events and how to use it?
+
+
+const EventEmitter = require('events');
+
+//domain class to get power of event driven programming
+//steps
+/**
+ * 1.create Event Emitter Object
+ * 2.you have to register for an event , listens for that event
+ */
+const event = 'order.placed';
+
+class OrderService extends EventEmitter {
+    constructor() {
+        super();
+        //event registration 
+        this.on(event, ({ id, qty, price }) => {
+            console.log(`${event} ${id} ${qty} ${price}`)
+        });
+    }
+    //biz api
+    placeOrder(orderdetails) {
+        //trigger event/emit event
+        this.emit(event, orderdetails);
+    }
+}
+//
+let orderService = new OrderService();
+orderService.placeOrder({ id: 1, qty: 10, price: 100 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+non blocking io:
+
+Node non blocking io apis
+
+1.fs io
+   -files system 
+2.network io
+  -http : web apps
+  -tcp
+  -udp
+
+Does node support blocking IO?
+
+Blocking io means
+
+  readFile----stackframe --read file
+
+All blocking io operations are handled by libuv thread pools.
+ when you read, node will assign a thread  to read / write file.
+
+Note:
+1.Dont use blocking io apis for big files
+2.Dont use blocking io apis in network applications.
+3.Node supports only disk file io in blocking mode, not network apis
+
+
+Blocking io dont have callbacks.
+
+
+Node blocking io Operations:
+.........................
+
+fs.readFileSync()
+fs.writeFileSync()
+//blocking io
+const fs = require('fs');
+const path = './src/assets/info.txt'
+const options = {
+    encoding: 'UTF-8'
+}
+console.log('start')
+const fileContent = fs.readFileSync(path, options);
+console.log(fileContent);
+console.log('end')
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Global Variables:
+
+1.__dirname
+      ->Get current dir path
+2.__filename
+     ->Get current dir + path__filename
+     ->Get current dir + path
+
+
+path module:
+The path module provides utilities for working with file and directory paths.
+it is platform independant way of accessing file paths and dirs.
+
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, 'assets/info.txt')
+const options = {
+    encoding: 'UTF-8'
+}
+fs.readFile(filePath, options, (err, data) => {
+    if (err) throw err;
+    console.log(data);
+});
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+IO CAN Be streaming io and non streaming:
+.........................................
+
+Async io operations can be done two ways.
+
+1.Non-Streaming : 
+ fs.readFile
+ fs.writeFile 
+apis
+not good for big files 
+not good for network file transfer.
+
+2.Streaming  : Evented IO : Event driven IO.
+
+Non Streaming IO : read / write
+
+
+Types of Streams:
+
+1.Readaable Stream : input
+2.Writeable stream : output
+3.Duplex stream : read + output
+
+
+Built in readable Streams:
+
+HTTP responses, on the client
+HTTP requests, on the server
+fs read streams
+zlib streams
+crypto streams
+TCP sockets
+child process stdout and stderr
+process.stdin
+
+Writable Streams:
+
+HTTP requests, on the client
+HTTP responses, on the server
+fs write streams
+zlib streams
+crypto streams
+TCP sockets
+child process stdin
+process.stdout, process.stderr
+
+All streaming apis are powered with events
+node io streams has built in events.
+events are emitted by node.
+Our programs are listeners
+
+All streaming apis are powered with events
+node io streams has built in events.
+events are emitted by node.
+Our programs are listeners
+
+
+common events in all io
+
+data event:
+ which is emitted by node, for each chunk.
+
+close event:
+The 'close' event is emitted when the stream and any of its underlying resources (a file descriptor, for example) have been closed.
+
+end event:
+The 'end' event is emitted when there is no more data to be consumed from the stream.
+
+Event: 'error'
+ The 'error' event may be emitted by a Readable implementation at any time
+Typically, this may occur if the underlying stream is unable to generate data due to an underlying internal failure, or when a stream implementation attempts to push an invalid chunk of data.
+
+
+
+//how to read /write file using streams
+//streams are powered events : evented io
+const fs = require('fs')
+const path = require('path');
+const { log } = console;
+
+const fileName = path.join(__dirname, 'assets/info.txt');
+const config = {
+    encoding: 'UTF-8'
+}
+//read stream
+const inputStream = fs.createReadStream(fileName, config);
+
+//data event is emitted by os for each chunk of data
+let data = ''
+inputStream.on('data', function (chunk) {
+    log(`Received ${chunk.length} bytes of data.`)
+    data += chunk;
+})
+
+//end event is called , no more chunk of data is availble.
+inputStream.on('end', function () {
+    log('There will be no more data to read!');
+    log(data);
+})
+
+//error event: for error handling
+inputStream.on('error', function (err) {
+    log(`Some thing went wrong! ${err}`)
+});
+
+//////////////
+//how to implement write stream
+const fs = require('fs');
+const path = require('path');
+
+const fileName = path.join(__dirname, 'assets/grains.txt');
+const config = {
+    encoding: 'utf8',
+    flag: 'w'
+};
+const outputStream = fs.createWriteStream(fileName, config);
+
+const grains = ['wheat', 'rice', 'oats'];
+
+while (grains.length) {
+    let data = grains.pop() + " ";
+    outputStream.write(data);
+    console.log("Wrote: %s", data);
+}
+outputStream.close();
+
+outputStream.on('close', function () {
+    console.log('file has been closed ')
+})
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+read + write - inputstream and outputstream
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+//Read + write : simple eg:
+//read + write
+const fs = require('fs');
+const path = require('path');
+
+//read
+const inputfileName = path.join(__dirname, 'assets/info.txt');
+//write
+const outputFileName = path.join(__dirname, 'assets/greeter.txt');
+
+const config = {
+    encoding: 'UTF-8'
+}
+
+const inputStream = fs.createReadStream(inputfileName, config);
+const outputStream = fs.createWriteStream(outputFileName, config);
+
+//Register data event.
+inputStream.on('data', function (chunk) {
+    console.log(`Received ${chunk.length} bytes of data.`);
+    console.log(chunk);
+    outputStream.write(chunk);
+});
+
+
+//end event
+inputStream.on('end', function () {
+    console.log('There will be no more data to read!');
+    outputStream.close();
+})
+
+//error event: for error handling
+inputStream.on('error', function (err) {
+    console.log(`Some thing went wrong! ${err}`)
+});
+
+outputStream.on('close', function () {
+    console.log(`File write operation is completed`);
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Back Pressure:
+..............
+Problems when you do read and write together
+
+1. In general read operation is faster than write operation
+
+
+Back Pressure means inputstream is fast, outputstream slow, then data will be
+lost.
+
+
+Handling back pressure:
+.......................
+Pause Input stream if the Node Process memory is full(Buffer),resume if buffer/process memory is empty.
+
+stream.pause() if stream is full
+else
+stream.resume() if stream is drain
+
+const fs = require('fs');
+const path = require('path');
+
+const inputfileName = path.join(__dirname, 'assets/big.file');
+const outputfileName = path.join(__dirname, 'assets/big_copy.file');
+
+const config = {
+    encoding: 'UTF-8'
+}
+
+//Back pressure handling
+const readerStream = fs.createReadStream(inputfileName, config);
+const writeStr = fs.createWriteStream(outputfileName, config);
+
+
+readerStream.on('data', function (chunk) {
+    console.log(`Received ${chunk.length} bytes of data.`);
+    let buffer_good = writeStr.write(chunk);
+    if (!buffer_good) readerStream.pause();
+});
+writeStr.on('drain', function () {
+    console.log('buffer drained!');
+    readerStream.resume();
+});
+readerStream.on('end', function () {
+    //console.log(data);
+});
+
+readerStream.on('error', function (err) {
+    console.log(err.stack);
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+pipe method is simplest method for implementing back pressure:
+
+
+const fs = require('fs');
+const path = require('path');
+
+const inputfileName = path.join(__dirname, 'big.file');
+const outputfileName = path.join(__dirname, 'big_copy.file');
+
+const config = {
+      encoding: 'UTF-8'
+}
+
+//Back pressure handling
+const readerStream = fs.createReadStream(inputfileName, config);
+const writeStr = fs.createWriteStream(outputfileName, config);
+
+//backPressure streams
+//pipe method is simplest method which wraps resume,pasuse,drain 
+readerStream.pipe(writeStr);
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Web application:non blocking http implementation;
+..................................................
+
+HTTP module is used to build http server,app, deployment
+
+
+HTTP modules objects:
+....................
+
+Agent :
+  client object
+ClientRequest
+   Request object is used to handle http client requests
+Server
+  Server object is used to implement http servers/web containers
+ServerResponse
+  Object is used to send data 
+IncommingMessage
+   Represents message payloads.
+
+
+//simple http implementation
+const http = require('http');
+
+const {log} = console;
+
+//create server and handle request
+//non blocking request-response handling.
+const requestListener = (request, response) => {
+    //send response
+    response.write('Hello Node');
+    response.end();
+
+    //response events
+    response.on('close',()=>{
+        log('response close event')
+    })
+    response.on('finish',()=>{
+        log('response finish event')
+    })
+};
+const server = http.createServer(requestListener);
+
+
+//start the server
+
+server.listen(3000,()=>{
+    log('Server is Ready');
+})
+
+//attach and listen for server events
+
+server.on('request',(request,response)=>{
+    log(`${request.url} - ${request.method} `)
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//simple http implementation
+const http = require('http');
+const { findAllAsyncPromise } = require('./services/Todoservice');
+
+const { log } = console;
+
+//create server and handle request
+//non blocking request-response handling.
+const requestListener = async (request, response) => {
+    //set header
+    response.writeHead(200, {
+        'Content-Type': 'application/json'
+    });
+    //send response
+    // findAllAsyncPromise().then(todos=>{
+    //     response.write(todos);
+    //     response.end();
+    // })
+    try {
+        const todos = await findAllAsyncPromise();
+        response.end(todos);
+    }
+    catch (e) {
+        response.end('Some thing went wrong');
+    }
+
+    //response events
+    response.on('close', () => {
+        log('response close event')
+    })
+    response.on('finish', () => {
+        log('response finish event')
+    })
+};
+const server = http.createServer(requestListener);
+
+
+//start the server
+
+server.listen(3000, () => {
+    log('Server is Ready');
+})
+
+//attach and listen for server events
+
+server.on('request', (request, response) => {
+    log(`${request.url} - ${request.method} `)
+});
+
+if want to build real time applications
+
+req:
+
+url mapping - /api/todo , /api/users /api/customers
+
+method mapping - get,post,put,delete
+
+
+
+npm  ; node package manager.
+
+
+frameworks ;
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+IS it possible to build real time web apps by using just pure http module alone?
+
+ Yes! but it is very complex
+
+node modules types
+1.custom module - discussed
+2.in built modules - disucssed
+3.third party modules - 
+
+
+Third party modules :
+ created by others , we are going to use them.
+ like libs,frameworks....
+
+
+Where is third moudles are located?
+what if i want to share my module to other developers?
+
+mvnrepository ==maven ==third party jar files
+
+
+https://www.npmjs.com/
+
+how to download third party modules into our application? How to push our module to this rep?
+
+javascript uses tool called "npm".
+
+
+node package manager:
+
+npm is tool is used to distribute node modules to others
+and you can get node modules from other others.
+
+npm tool is distributed along with node installation
+
+npm uses public repository server called npmjs.com npmjs.org
+
+tools and libs,frameworks all are distributed as node modules into repository.
+
+
+Java script application :
+
+Javascript Project Structure:(server side/ client side)
+.........................................................
+
+
+The project must have two things
+
+1.package.json file :
+   meta file which describes the project information
+2.node_modules folder
+   which contains libs/frameworks/tools code.
+
+create package.json file
+
+>npm init
+
+{
+  "name": "mynode-apps",
+  "version": "1.0.0",
+  "description": "Demo application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "app"
+  ],
+  "author": "Subramanian Murugan",
+  "license": "ISC"
+}
+
+
+npm is used
+
+to install,uninstall,publish node modules from node repo / into node repo.
+
+if you install third party modules , into your project, node distributes npm tool ,using this you can install,uninstall,upgrade node modules.
+
+
+npm syntax:
+
+npm commandName.
+
+node_modules : folder which can hold all javascript modules downloaded from repo.
+
+
+installing module:
+
+>npm install  moduleName  --options
+>npm i moduleName --options
+
+
+>npm install module 
+  here no option is told, means default is --save
+
+>npm i module
+
+options:
+ --save ; 
+ --save-dev
+ -g
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+App development ; three stage
+
+1.dev
+2.testing
+3.production.
+
+if you install any packages/dependencies, you can tell that is it for production and developemnt, only devel/testing
+
+if you are installing any node module, you can tell, do you want to use only for development
+or development + production.
+
+Unit testing libs : Junit.jar===>java
+
+ --save = >    development + production
+ --save-dev => only for development
+
+Which code need not be used for production:
+
+1.All testing related  libs/frameworks - unit,e2s
+2.Tools like compilers,frameworks related code.
+
+Who will separate out this depedency(lib) for production/dev
+
+ Build tools -  webpack.
+ webpack will scan package.json---extracting prod depedencies
+
+
+
+Demo;
+
+>npm install lodash --save 
+
+
+"dependencies": {
+    "lodash": "^4.17.15"
+  }
+
+const array = require('lodash/array');
+
+const list = [1, 2, 3];
+
+array.fill(list, 'a');
+console.log(list);
+
+
+Unit testing Env:
+
+->chai.js
+
+npm install chai --save-dev
+
+"devDependencies": {
+    "chai": "^4.2.0"
+  }
+
+any thing inside this depdenencies will be used in dev only
+
+
+npm install chai --save-dev
+
+"devDependencies": {
+    "chai": "^4.2.0"
+  }
+
+any thing inside this depdenencies will be used in dev only
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+how to uninstall any module?
+
+npm unistall chai --save-dev
+
+-g : global dependencies:
+..........................
+global package : package will be installed globally 
+ inside c drive.
+ looks like exe/bat files in windows
+
+global packages not used for development(coding)
+
+tools
+ ->build system
+ ->servers - webservers,testing servers
+ ->compilers : babel,tsc....
+
+Tool:
+
+Unit Testing Server:
+
+Mocha -server
+chai - for coding assertion lib
+
+
+npm install --global mocha
+npm install -g mocha
+
+C:\Users\sasub\AppData\Roaming\npm\mocha
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Automation: scripts;
+....................
+
+We can automate js applications.
+
+write all auotomation steps inside scripts
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+
+key: value
+
+key is called command-script command
+value is task to be executed. ; task could be any thing.
+
+
+command can be built in or custom commands
+
+npm provides lot of built in commands
+
+start,test,postinstall,preinstall..........
+
+
+how to run node apps using npm scripts.
+
+node filename.js --direct use
+
+via script
+how to run script
+
+>npm commandname ---incase of built in command
+>npm start
+
+>npm run commandname - custom commands
+>npm run subu
+
+
+Problems with Global Modules:
+..............................
+
+1.version and compablity issue for new projects
+
+solution: 
+ install those golbal tools as local dev modules
+
+
+
+solution: 
+ install those golbal tools as local dev modules
+
+g vs --save-dev:
+
+global dependencies not good for multiple sharing projects
+install tools as project specific. --save-dev
+
+>npm i mocha --save-dev
+
+
+ single command trigger workflows
+
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Express Js
+
+ npm install express --save
+
+
+Since core http module is not enough to build end to end realtime web applications.
+So we need frameworks.
+
+Frameworks in node : there are lot of framworks in the market.
+
+1.express.js : this is first framework from the node team.
+2.hapi.js
+3.loopback.js : IBM
+..........
+
+express.js:
+framework to build "RESTFull WebService" , Dynamic content generation web application.
+
+
+Express Key concepts: in express every thing object
+
+Objects in express
+
+1.Application
+  We call Container object which other objects
+  entry and exit of an application
+  application is created by calling function
+
+2.Request
+
+4.Response
+
+5.Router
+
+1.Application object roll:
+
+Routing HTTP requests; see for example, app.METHOD and app.param.
+Configuring middleware; see app.route.
+Rendering HTML views; see app.render.
+Registering a template engine; see app.engine.
+
+
+
+//simple rest end points using express
+const { log } = console;
+//here express variable represents the function , to create object
+const express = require('express');
+//call express variable to create application object
+const app = express();
+
+//application object pointed by app variable.
+//application object used for creating end points, to start server
+
+
+//handling request-response. rest end points
+
+app.get('/', (request, response) => {
+    response.end('Home Page')
+});
+app.get('/api/message/hello', (request, response) => {
+    response.end('Hello')
+});
+app.get('/api/message/hai', (request, response) => {
+    response.end('Hai')
+});
+
+
+app.listen(3000, () => {
+    log('Express server is running!!!');
+})
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Modularizing express application
+
+
+//routers
+const express = require('express');
+//create router object
+const router = express.Router()
+
+router.get('/hello', (request, response) => {
+    response.end('Hello')
+});
+router.get('/hai', (request, response) => {
+    response.end('Hai')
+});
+router.post('/', (request, response) => {
+    response.end('post request')
+});
+router.put('/', (request, response) => {
+    response.end('PUT request')
+});
+router.delete('/', (request, response) => {
+    response.end('DELETE request')
+});
+
+module.exports = router;
+
+
+
+
+const express = require('express');
+const { findAllAsyncPromise } = require('../services/Todoservice');
+//create router object
+const router = express.Router()
+
+router.get('/list', async (request, response) => {
+    const todos = await findAllAsyncPromise();
+    response.json(todos);
+});
+
+module.exports = router;
+
+
+
+const { log } = console;
+const express = require('express');
+const messageRouter = require('./routers/messagerouter')
+const todoRouter = require('./routers/todosrouter');
+const app = express();
+//Router binding with application
+app.use('/api/message',messageRouter);
+app.use('/api/todos',todoRouter);
+
+app.get('/', (request, response) => {
+    response.end('Home Page')
+});
+
+app.listen(3000, () => {
+    log('Express server is running!!!');
+})
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+middlewares;
+
+filters/intercepters in other languages.
+
+which are functions are called before any request processing begins.
+which are usefull for data conversion,validation,filtering , logging,formatting jobs.
+
+types of middlewares
+
+1.built in middlewares
+2.third party middleware
+3.custom middleares.
+
+expect custom, those middlewares are distributed as npm modules that must be installed.
+
+
+eg:
+to read data from client which was sent as json.
+
+we can use one middleware to read ,parse json into javascript.
+
+body parser ; middleware;
+ json parser.
+client ---sending json-------body-parser--converts---into js object---|
+
+npm install body-parser
+
+const { log } = console;
+const express = require('express');
+const bodyParser = require('body-parser')
+const messageRouter = require('./routers/messagerouter')
+const todoRouter = require('./routers/todosrouter');
+
+
+const app = express();
+
+//attaching middleware to application
+// parse application/json
+app.use(bodyParser.json())
+
+//router itself is built in middleware, which is part of express core module.
+//Router binding with application
+app.use('/api/message',messageRouter);
+app.use('/api/todos',todoRouter);
+
+app.get('/', (request, response) => {
+    response.end('Home Page')
+});
+
+app.listen(3000, () => {
+    log('Express server is running!!!');
+})
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Custom middleware;
+
+it is a function, having three args - request,response,next
+
+
+middleware work flow
+
+ client------request------------|middleware-next--->real request processing
+
+next - just variable, holding the next function reference,call the next function.
+
+chaining middlewares
+ client------request------------|middleware- next--middleware ---next->real request processing
+
+
+types of custom middlewares
+
+-app level middleware
+ app.use
+-router level middleware
+ router.use
+
+-app / router with method / url based middlware
+
+ app.use() - call this middleware for all request , all method in app level
+
+ app.use('/api/foo') -call this middleware for only on app , with url /api/foo.
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+MicroServices:
+  Microservice is archtecture of building distributed application.
+
+
+Building applications into small applications, communicate them, exchange data,deploy them, maintain them.
+
+How to start building micro services apps?
+
+  dev  ----------- infra structure
+
+micro services are ployglot - any language.
+
+
+java
+ -spring cloud
+ -micro profile
+ -Ecplise vertx
+
+javascript:
+
+Moleculer
+   Progressive microservices framework for Node.js.
+
+
+
+Moleculer features:
+
+1.Promise-based solution (async/await compatible)
+2.request-reply concept
+3.support event driven architecture with balancing
+4.built-in service registry & dynamic service discovery
+5.load balanced requests & events (round-robin, random, cpu-usage, latency, sharding)
+6.many fault tolerance features (Circuit Breaker, Bulkhead, Retry, Timeout, Fallback)
+7.plugin/middleware system
+8.support versioned services
+9.support Streams
+10.service mixins
+11.built-in caching solution (Memory, MemoryLRU, Redis)
+12.pluggable loggers (Console, File, Pino, Bunyan, Winston, Debug, Datadog, Log4js)
+13.pluggable transporters (TCP, NATS, MQTT, Redis, NATS Streaming, Kafka, AMQP 0.9, AMQP 1.0)
+14.pluggable serializers (JSON, Avro, MsgPack, Protocol Buffer, Thrift)
+15.pluggable parameter validator
+16.multiple services on a node/server
+17.master-less architecture, all nodes are equal
+18.parameter validation with fastest-validator
+19.built-in metrics feature with reporters (Console, CSV, Datadog, Event, Prometheus, StatsD)
+20.built-in tracing feature with exporters (Console, Datadog, Event, Jaeger, Zipkin)
+21.official API gateway, Database access and many other modules…
+
+
+Moleculer setup:
+
+project creations;
+
+1.from begining like normal node application.
+2.moleculer cli- to setup realtime project with all artifacts.
+
+npm install moleculer
+
+
+Core concepts in Molecular:
+..........................
+
+Service
+ A service is a simple JavaScript module containing some part of a complex application. 
+ A service represents a biz logic in your application.
+
+Service Broker : == Spring Container
+ Service Broker is the heart of Moleculer.
+
+It is responsible for management and communication between services (local and remote). 
+Each node must have an instance of Service Broker.
+
+"Service Broker is one single Node instance - Node runtime"
+
+
+		         Service1 -- Service 2 Service N
+                                     |
+                    		 --------------
+				 Service Broker
+				     |
+                                  Node Runtime
+
+
+
+
+Use case : how to create Service broker and start
+
+//Get ServiceBroker function(class)
+const { ServiceBroker } = require('moleculer');
+
+//Create Service Broker object.
+const broker = new ServiceBroker();
+
+
+How write service , how to use that service?
+
+ Service is program, which has biz logic
+
+Service is created 
+
+broker.createService(serivice definition)
+
+service definition is literal object which contains all service configuration.
+
+Service configuration is other wise called "Service schema".
+
+Service schema properties
+
+1.name:
+  Which is string, should be noun, should be meaningfull, should end with service
+  "HelloWorldService"
+
+2.actions
+   It is nested object , which contains list of service methods.
+
+ broker.createService({
+    name: 'HelloWorldService',
+    actions: {
+        //methods
+        sayHello() {
+            return 'Hello MicroService';
+        }
+    }
+});
+
+How to invoke/call Service methods?
+
+There are many ways
+
+1.By using broker.start method  and broker.call method
+
+2.By using  REPL cli
+3.By using another service => Service to Service calls
+
+
+Note: 
+Every thing is async.
+
+broker starting is async
+service call is also async.
+
+flow should be like below
+
+ ensure that broker is ready, after that do service call.
+
+how to ensure broker ready?
+ broker returns promise, promise must be resolved-you have to call service inside then method of broker
+
+
+
+
+//Get ServiceBroker function(class)
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+//Create Service Broker object.
+const broker = new ServiceBroker();
+
+//how to create Service
+//every service , contains schema 
+//schema is collection of properties
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello() {
+            return 'Hello,Molecular'
+        }
+    }
+});
+
+//start app
+function startApp() {
+    //start container,ensure broker ready.
+    broker.start().then(() => {
+        log('Broker ready!!!')
+        //call(serviceName.method)
+        broker.call('hello.sayHello').then(response => {
+            log(`Service Response  ${response}`)
+        }).catch(err => log('Service failed'))
+    }).catch(e => {
+        log('Broker failed')
+    });
+}
+startApp();
+
+//how to write simplifiy the above call
+async function init() {
+    try {
+        await broker.start();
+        const response = await broker.call('hello.sayHello')
+        log(`Service Response  ${response}`)
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+Use case 2 ; multi methods:
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+const broker = new ServiceBroker();
+
+//multiple service methods
+broker.createService({
+    name: 'profile',
+    actions: {
+        findAll() {
+            return 'Profile findall'
+        },
+        save() {
+            return 'profile save'
+        },
+        remove() {
+            return 'profile remove'
+        }
+
+    }
+});
+
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response= await broker.call('profile.findAll')
+        log(`${response}`)
+        response= await broker.call('profile.save')
+        log(`${response}`)
+        response= await broker.call('profile.remove')
+        log(`${response}`)
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+How to create multiple services?
+
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello() {
+            return 'Hello,Molecular'
+        }
+    }
+});
+
+broker.createService({
+    name: 'hai',
+    actions: {
+        //define biz api of that service
+        sayHai() {
+            return 'Hai,Molecular'
+        }
+    }
+});
+
+
+broker.createService({
+    name: 'greet',
+    actions: {
+        //define biz api of that service
+        sayGreet() {
+            return 'Greet,Molecular'
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response= await broker.call('hello.sayHello')
+        log(`${response}`)
+        response= await broker.call('hai.sayHai')
+        log(`${response}`)
+        response= await broker.call('greet.sayGreet')
+        log(`${response}`)
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Use case : parameters to service methods
+
+How to pass parameter to Service?
+
+Any Service can take parameter, which type could be any thing: number,string,boolean,array,
+object...
+
+Syntax:
+
+broker.call("serviceName.method",{p1:value1,p2:value2,pn:valueN})
+
+Note: parameters must be encapsulated into an literal object
+
+
+
+How to read args from the service Method?
+
+Parameters are stored inside special object called "Context"
+
+Context Object:
+
+1.Similar to Broker Object
+2.It has all capacity of Broker object
+3.Context object is used inside service definitions , where ever you require broker
+  Object reference.
+
+context object already created, and its refernce is avaiable inside "Service method" as 
+args.
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello(ctx) {
+          const {name} = ctx.params;
+            return `Hello,${name}`;
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response= await broker.call('hello.sayHello',{name:'Subramanian'})
+        log(response);        
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Params,handler , validation:
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello(ctx) {
+            const { name } = ctx.params;
+            return `Hello,${name}`;
+        }
+    }
+});
+//adding validation to parameters, and  adding more behaviours
+//behaviours are like validation,caching...
+broker.createService({
+    name: 'math',
+    actions: {
+
+        //add method with more behaviours
+        add: {
+            //validation behaviour
+            params: {
+                a: "number",
+                b: "number"
+            },
+            //logic, inside a method called handler
+            handler(ctx) {
+                const { a, b } = ctx.params;
+                return a + b;
+            }
+
+        }
+
+    }
+});
+
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response = await broker.call('hello.sayHello', { name: 'Subramanian' })
+        log(response);
+        let addresult
+        addresult = await broker.call('math.add',{a:10,b:20});
+        log(`Add Result is ${addresult}`);
+        addresult = await broker.call('math.add',{a:'20',b:20});
+        log(`Add Result is ${addresult}`);
+
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Service Communication:
+.....................
+
+Two or more services can be communicated.
+
+Types of services:
+
+1.local service
+2.remote service
+3.api service
+
+local service;
+  services are created and executed under single service broker
+
+Local Service Communication:
+
+/**
+ * Create two services , communicate them.
+ * //Local Services
+ */
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+const broker = new ServiceBroker();
+
+//publisher service
+broker.createService({
+    name: 'publisher',
+    actions: {
+        add: {
+            params: {
+                a: "number",
+                b: "number"
+            },
+            handler(ctx) {
+                const { a, b } = ctx.params;
+                return a + b;
+            }
+        }
+    }
+})
+
+
+//consumer service
+broker.createService({
+    name: 'consumer',
+    actions: {
+        calculate: {
+            async handler(ctx) {
+                log('consumer - calculate')
+                let result = await ctx.call('publisher.add', { a: 10, b: 20 });
+                log(`Result is ${result}`)
+            }
+        }
+    }
+})
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response = await broker.call('consumer.calculate')
+        log(response)
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+..........>>>>>>>>>>>>>>>>>>>>>>>>......................................................................
+
+By using  REPL cli:
+
+>npm install moleculer-repl --save-dev
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        sayHello(ctx) {
+            const { name } = ctx.params;
+            return `Hello,${name}`;
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        broker.repl();     
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Distributed Services; remote calls,-RPI:
+......................................
+
+Service-1
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+const broker = new ServiceBroker();
+
+//publisher service
+broker.createService({
+    name: 'publisher',
+    actions: {
+        add: {
+            params: {
+                a: "number",
+                b: "number"
+            },
+            handler(ctx) {
+                const { a, b } = ctx.params;
+                return a + b;
+            }
+        }
+    }
+})
+
+async function init() {
+    try {
+        await broker.start();
+        broker.repl();
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+
+Service-2
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+const broker = new ServiceBroker();
+
+//consumer service
+broker.createService({
+    name: 'consumer',
+    actions: {
+        calculate: {
+            async handler(ctx) {
+                log('consumer - calculate')
+                let result = await ctx.call('publisher.add', { a: 10, b: 20 });
+                log(`Result is ${result}`)
+            }
+        }
+    }
+})
+
+async function init() {
+    try {
+        await broker.start();
+        broker.repl();
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+if you start calling, you will get the error 
+
+>> ERROR:
+ServiceNotFoundError: Service 'publisher.add' is not found.
+ 
+How to communicate remote services?
+
+We need some infra software and transporter
+
+Transporters:
+
+Transporter is an important module if you are running services on multiple nodes. 
+
+Transporter communicates with other nodes. 
+
+It transfers events, calls requests and processes responses …etc. 
+
+If a service runs on multiple instances on different nodes, the requests will be load-balanced among live nodes.
+
+Transpoerts:
+............
+
+Built-in transporters
+
+TCP transporter
+NATS Transporter
+Redis Transporter
+MQTT Transporter
+AMQP Transporter
+Kafka Transporter
+NATS Streaming (STAN) Transporter
+
+
+steps:
+
+1.start any transporter
+
+eg: nats,redis..
+
+docker run -p 4444:4444 nats -p 4444
+
+
+2.transporter configuration in service
+const broker = new ServiceBroker({
+    transporter: "nats://nats.server:4222"
+});
+
+3.npm install nats --save
+
+
+publisher
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+//service broker schema ; collection of properties;
+const broker = new ServiceBroker({
+    transporter: "nats://localhost:4444"
+});
+
+//publisher service
+broker.createService({
+    name: 'publisher',
+    actions: {
+        add: {
+            params: {
+                a: "number",
+                b: "number"
+            },
+            handler(ctx) {
+                const { a, b } = ctx.params;
+                return a + b;
+            }
+        }
+    }
+})
+
+async function init() {
+    try {
+        await broker.start();
+        broker.repl();
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+const broker = new ServiceBroker({
+    transporter: "nats://localhost:4444"
+});
+
+//consumer service
+broker.createService({
+    name: 'consumer',
+    actions: {
+        calculate: {
+            async handler(ctx) {
+                log('consumer - calculate')
+                let result = await ctx.call('publisher.add', { a: 10, b: 20 });
+                log(`Result is ${result}`)
+            }
+        }
+    }
+})
+
+async function init() {
+    try {
+        await broker.start();
+        broker.repl();
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Registry & Discovery:
+....................
+
+1.Service Registry
+
+ It is mini /small database , key-value pair database, in memory database.
+ Which has all service,actions,event listeners, nodes information.
+
+
+Points:
+1.Every Broker has in built Service Registry
+2.All services local or remote are registered with service registry as soon you create 
+  service
+3.Molecular has built in registry called LocalDiscoveryRegistry, which is not using third party registry servers
+  like apache zoo keeper,cosule,etcd,eurka....
+
+4.if you want to make other servers as service registry -
+
+    registry: {
+        discoverer: "redis://redis-server:6379"
+    }  
+Dynamic service discovery
+1.Local
+2.Redis
+3.etcd3
+4.Customization
+
+Lab:
+How to use redis as registry server.
+
+
+Steps:
+
+1.start redis server
+
+docker run  -p 6379:6379 redis
+
+
+2.install redis module 
+npm install ioredis --save
+
+3.Service Registry Conguration.
+const broker = new ServiceBroker({
+    transporter: "nats://localhost:4444",
+    registry: {
+        discoverer: "redis://localhost:6379"
+    } 
+});
+
+4.start services , see the message below
+[2020-09-17T06:30:21.545Z] INFO  laptop-r2tggfdl-14456/REGISTRY: Strategy: RoundRobinStrategy
+[2020-09-17T06:30:21.546Z] INFO  laptop-r2tggfdl-14456/REGISTRY: Discoverer: RedisDiscoverer
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Scalability and High availability ; Load Balancer / fail over
+............................................................
+
+
+Load balancing means , distributing load to different machines in the cluster.
+
+In distributed computing, one server may not be enough to  handle load.
+
+1.Moleculer has several built-in load balancing strategies.
+
+Built-in strategies
+
+ ->RoundRobin strategy
+	This strategy selects a node based on round-robin algorithm.
+   Refer:https://en.wikipedia.org/wiki/Round-robin_DNS
+ ->Random strategy
+	This strategy selects a node randomly.
+ ->CPU usage-based strategy
+	This strategy selects a node which has the lowest CPU usage. Due to the node list can 	be very long, it gets samples and selects the node with the lowest CPU usage from only 	samples instead of the whole node list.
+
+ ->Latency-based strategy
+	This strategy selects a node which has the lowest latency, measured by periodic ping commands. Notice that the strategy only ping one of nodes from a single host.
+
+
+    registry: {
+        strategy: "RoundRobin"
+    }
+
+Demo:
+
+steps:
+
+1.start consumer service
+
+2.start publisher service 2 instances.
+
+3.query publisher from consumer , and see which instance is giving result.
+
+
+publisher:
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+
+//service broker schema ; collection of properties;
+const broker = new ServiceBroker({
+    transporter: "nats://localhost:4444",
+    registry: {
+        discoverer: "redis://localhost:6379",
+        strategy: "Random"        
+    } 
+});
+//publisher service
+broker.createService({
+    name: 'publisher',
+    actions: {
+        add: {
+            params: {
+                a: "number",
+                b: "number"
+            },
+            handler(ctx) {
+                const { a, b } = ctx.params;
+                return `The ${a + b} from ${broker.nodeID}`;
+            }
+        }
+    }
+})
+
+async function init() {
+    try {
+        await broker.start();
+        broker.repl();
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Service inheritance:
+
+Objective:
+
+ lets say i have a service having more methods, that i dont want to give in a service
+ i have service , that service apis , i want to reuse in service apis
+
+Service inheritance comes into place.
+
+In molecular , a service can inherit many services - multi level, for multi level, molcular uses
+a concept called "mixins".
+
+Use case:
+1.if you write any REST Controller.
+2.if you write database operations inside your service.
+
+parent.service.js
+
+module.exports = {
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello() {
+            return 'Hello,Molecular'
+        }
+    }
+};
+
+
+child
+
+const { ServiceBroker } = require('moleculer');
+const hello = require('./parent.service');
+const { log } = console;
+const broker = new ServiceBroker();
+
+
+broker.createService({
+    name: 'greeter',
+    mixins: [hello],
+    actions: {
+        sayGreet:{
+            handler(){
+                return 'Greet';
+            }
+        }
+    }
+});
+
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response = await broker.call('greeter.sayHello')
+        log(`${response}`)
+        response = await broker.call('greeter.sayGreet')
+        log(`${response}`)
+
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Events:
+
+How services can communicate without calling directly and passing messages among them?
+
+event emitter, pattern.
+
+Services can register for events, other services can emit/broadcast events
+Services can send events along with data.
+
+
+
+Steps:
+
+1.Register events
+
+ events: {
+        "user.created"(payload) {
+            log("User created:", payload);
+            // Do something
+        }
+    }
+
+2.send data via events
+
+broker.emit('nameofevent',data)
+context.emit('nameofevent',data);
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+//Listener service
+broker.createService({
+    name:'reportlistner',
+    events: {
+        "user.created"(payload) {
+            this.logger.info("User created:", payload);
+            // Do something
+        }
+    }
+});
+
+broker.createService({
+    name:'reportsender',
+    actions:{
+        sendReport(ctx){
+            let user = {
+                id: 1,
+                name: 'subramanian'
+            }
+            ctx.emit("user.created", { entity: user });
+            return `Report has been sent`
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response = await broker.call('reportsender.sendReport');
+        log(response);
+
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+
+
+/////////////////
+
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+
+broker.createService({
+    name: 'report',
+    events: {
+        "user.created"(payload) {
+            this.logger.info("User created:", payload);
+            // Do something
+        }
+    },
+    actions: {
+        //define biz api of that service
+        sayHello(ctx) {
+            const { name } = ctx.params;
+            return `Hello,${name}`;
+        }
+    }
+});
+
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response = await broker.call('report.sayHello', { name: 'Subramanian' })
+        let user = {
+            id: 1,
+            name: 'subramanian'
+        }
+        broker.emit("user.created", { entity: user });
+        log(response);
+
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+Molecular methods
+
+1.public methods / service methods
+ actions:{
+    sayHello(){}
+ }
+2.Private methods
+
+3.life cycle methods
+
+4.HTTP end point methods.
+
+
+Private methods:
+
+const { ServiceBroker } = require('moleculer');
+const { log } = console;
+const broker = new ServiceBroker();
+
+broker.createService({
+    name: 'math',
+    actions: {
+        //public methods
+        calculate(ctx) {
+          //calling private method
+          const result=this.add(ctx.params.a,ctx.params.b);
+          return result
+        }
+    },
+    //private methods
+    methods: {
+        add(a,b){
+            return a +b;
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        //calling public methods
+        response = await broker.call('math.calculate', { a: 10, b: 20 });
+        log(response);
+
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+life cyle methods:
+...................
+
+
+const { ServiceBroker } = require('moleculer');
+const broker = new ServiceBroker();
+
+broker.createService({
+    name: 'math',
+    actions: {
+        add(ctx) {
+            return ctx.params.a + ctx.params.b;
+        }
+    },
+    //life cycle methods
+    created() {
+        // Fired when the service instance created (with `broker.loadService` or `broker.createService`)
+        this.logger.info("created");
+    },
+
+    async started() {
+        // Fired when broker starts this service (in `broker.start()`)
+        this.logger.info("started");
+    },
+    async stopped() {
+        // Fired when broker stops this service (in `broker.stop()`)
+        this.logger.info("stoped");
+    }
+})
+
+
+async function init() {
+    try {
+        await broker.start();
+        let response;
+        response = await broker.call('math.add', { a: 1, b: 3 })
+        console.log(`response ${response}`)
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Molecular Service Types:
+
+
+1.Local Service
+2.Remote Service
+
+.............
+
+1.back end service
+  service which is having application logic.
+
+2.front end service /api gate way service.
+  Service which exposes apis are as "Rest End points".
+
+
+API GATE Implementation:
+Molecular provides lot of modules 
+
+1.moleculer-web
+
+moleculer-web is official gatway module, which is built on express.js
+
+
+Steps:
+
+1.npm install moleculer-web --save
+
+2.Since  moleculer-web is separate module, you have create your own service, convert that service
+  into gatewayservice
+
+
+
+
+
+Rest Service:
+
+Simple:
+
+const { ServiceBroker } = require('moleculer');
+let ApiService = require("moleculer-web");
+
+const { log } = console;
+
+const broker = new ServiceBroker();
+
+
+broker.createService({
+    name:'apigateway',
+    mixins:[ApiService],
+    settings: {
+        routes:[{
+            path:"/api",
+            whitelist: [
+                // Access any actions in 'hello' service
+                "hello.*",
+            ]
+        }]
+    }
+});
+
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello() {
+            return 'Hello,Molecular'
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+
+url mapping;
+http://localhost:3000/api/hello/sayHello
+
+
+Aliases:
+.........
+
+You can use alias names instead of action names. You can also specify the method. Otherwise it will handle every method types.
+
+http://localhost:3000/api/hello/
+
+broker.createService({
+    name:'apigateway',
+    mixins:[ApiService],
+    settings: {
+        routes:[{
+            path:"/api",
+            aliases: {
+               "hello": "hello.sayHello"
+            }
+        }]
+    }
+});
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+read params:
+
+
+
+const { ServiceBroker } = require('moleculer');
+let ApiService = require("moleculer-web");
+
+const { log } = console;
+
+const broker = new ServiceBroker({
+    bulkhead: {
+        enabled: true,
+        concurrency: 3,
+        maxQueueSize: 10,
+    }
+});
+
+// broker.createService({
+//     name:'apigateway',
+//     mixins:[ApiService],
+//     settings: {
+//         routes:[{
+//             path:"/api",
+//             whitelist: [
+//                 // Access any actions in 'posts' service
+//                 "hello.*",
+//             ]
+//         }]
+//     }
+// });
+// broker.createService({
+//     name:'apigateway',
+//     mixins:[ApiService],
+//     settings: {
+//         routes:[{
+//             path:"/api",
+//             aliases: {
+//                "hello": "hello.sayHello"
+//             }
+//         }]
+//     }
+// });
+
+broker.createService({
+    name:'apigateway',
+    mixins:[ApiService],
+    settings: {
+        routes:[{
+            path:"/api",
+            aliases: {
+               "GET hello": "hello.sayHello",
+                  // The `name` comes from named param. 
+                // You can access it with `ctx.params.name` in action
+               "GET hello/:name": "hello.sayHelloByName"
+            }
+        }]
+    }
+});
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+        sayHello() {
+            return 'Hello,Molecular'
+        },
+        sayHelloByName(ctx) {
+            return `Hello ${ctx.params.name}`
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+        }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Resilance : Falut Management:
+.............................
+
+1.CicuitBreaker
+2.Timeout
+3.Retry
+4.Bulkhead
+
+
+Configuration broker level:
+
+Enable it in the broker options
+
+const broker = new ServiceBroker({
+    circuitBreaker: {
+        enabled: true,
+        threshold: 0.5,
+        minRequestCount: 20,
+        windowTime: 60, // in seconds
+        halfOpenTime: 5 * 1000, // in milliseconds
+        check: err => err && err.code >= 500
+    }
+});
+
+When to open circuit:
+Threshold value. 0.5 means that 50% should be failed for tripping.
+
+What will happen when cicuit opened?
+  Trigger fallbacks, give fallback result to caller.
+
+minRequestCount	Number	2	Minimum request count. Below it, CB does not trip.
+
+windowTime	Number	60	Number of seconds for time window.
+
+halfOpenTime	Number	10000	Number of milliseconds to switch from open to half-open state
+
+check	Function	err && err.code >= 500
+
+Configuration service :
+
+module.export = {
+    name: "users",
+    actions: {
+        create: {
+            circuitBreaker: {
+                // All CB options can be overwritten from broker options.
+                threshold: 0.3,
+                windowTime: 30
+            },
+            handler(ctx) {}
+        }
+    }
+};
+
+
+const { ServiceBroker } = require('moleculer');
+let ApiService = require("moleculer-web");
+
+const { log } = console;
+
+const broker = new ServiceBroker({
+    circuitBreaker: {
+        enabled: true,
+        threshold: 0.5,
+        minRequestCount: 20,
+        windowTime: 60, // in seconds
+        halfOpenTime: 5 * 1000, // in milliseconds
+        check: err => {
+            log('failed requests', err)
+            err && err.code >= 500
+        }
+    }
+});
+
+broker.createService({
+    name: 'apigateway',
+    mixins: [ApiService],
+    settings: {
+        routes: [{
+            path: "/api",
+            aliases: {
+                "REST hello": "hello"
+            }
+        }]
+    }
+});
+
+
+broker.createService({
+    name: 'hello',
+    actions: {
+        //define biz api of that service
+
+        list: {
+            handler(ctx) {
+                //simulating exception,if exeception, cb will open, try to use fallback api
+                //let foo = 'foo'
+                let foo;
+                if (foo) {
+                    throw new Error('Something went wrong')
+                }
+                return 'Hello,Molecular'
+            },
+            fallback: (ctx, err) => "I am fallback message"
+        },
+
+        get(ctx) {
+            log(ctx.params)
+            return `Hello How are you? ${ctx.params.id}`
+        }
+    }
+});
+
+async function init() {
+    try {
+        await broker.start();
+    }
+    catch (e) {
+        log(e);
+    }
+}
+init();
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Timeout
+Timeout can be set for service calling.
+
+It can be set globally in broker options, or in calling options.
+If the timeout is defined and request is timed out, 
+broker will throw a RequestTimeoutError error.
+
+
+const { ServiceBroker } = require('moleculer');
+let ApiService = require("moleculer-web");
+const _ = require("lodash");
+
+const { log } = console;
+
+const broker = new ServiceBroker({
+	requestTimeout: 5 * 1000,
+});
+
+broker.createService({
+	name: "test",
+	actions: {
+		slow: {
+			//timeout: 2000,
+			async handler(ctx) {
+				//here service will return "OK" result after 8000
+				await this.Promise.delay(8000); //error
+				//await this.Promise.delay(2000); //success, because which inside timelimit
+				return "OK";
+            },
+            fallback: (ctx, err) => "Some cached result",
+		},
+	}
+});
+
+
+broker.start()
+	.then(() => broker.repl())
+	.then(() => broker.Promise.delay(1000))
+	.then(() => broker.logger.info("Calling action..."))
+	.then(() => broker.call("test.slow", null, { timeout: 4000 }))
+	.then(res => broker.logger.info(res))
+	.catch(err => broker.logger.error(err.message));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Retry:
+
+ Try ,,, try ....try for some time or attempt, with in which if service is available/recovered 
+from errors, or failures, then return right result,after that switch to fallback
+
+const broker = new ServiceBroker({
+    retryPolicy: {
+        enabled: true,
+        retries: 5,
+        delay: 100,
+        maxDelay: 2000,
+        factor: 2,
+        check: err => err && !!err.retryable
+    }
+});
+
+broker.call("posts.find", {}, { retries: 3 });
+
+const _ = require("lodash");
+const {ServiceBroker} = require("moleculer");
+const { MoleculerRetryableError } = require("moleculer").Errors;
+
+
+
+const broker = new ServiceBroker({
+	retryPolicy: {
+		enabled: true,
+		delay: 100,
+		maxDelay: 2000,
+		factor: 2,
+		retries: 5,
+		//check: err => !!err
+    },
+	tracing: {
+		enabled: true,
+		exporter: ["Console", "Event"]
+	}
+});
+
+const apiService = broker.createService({
+	name: "api",
+	actions: {
+		rest: {
+			//visibility: "private",
+			handler(ctx) {
+				return ctx.call("test.wrong", ctx.params);
+			}
+        }
+    }
+	
+});
+
+broker.createService({
+	name: "test",
+	actions: {
+		wrong: {
+			params: {
+				a: "number"
+			},
+			async handler(ctx) {
+				this.logger.info("Action called.", ctx._retryAttempts);
+				//retry simulation. 
+				//OK Result will be given to caller after 4 att
+				if (!ctx._retryAttempts || ctx._retryAttempts < 4  ) {
+					await this.Promise.delay(5000);
+					throw new MoleculerRetryableError("Some error");
+				}
+
+				return "OK";
+			}
+		},
+	}
+});
+
+
+broker.start()
+	.then(() => broker.repl())
+	.then(() => broker.Promise.delay(1000))
+	.then(() => broker.call("api.rest", { a: 5 }, { requestID: "123", retries: null }))
+	.then(res => broker.logger.info(res))
+	.catch(err => broker.logger.error(err.message));
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+BulkHead:
+
+ Limiting concurrency.
+if a service need to be called by 3 concurrent users not beyond.
+
+
+const { ServiceBroker } = require('moleculer');
+let ApiService = require("moleculer-web");
+const _ = require("lodash");
+
+const { log } = console;
+
+
+const broker = new ServiceBroker({
+	bulkhead: {
+		enabled: false,
+		concurrency: 1,
+		maxQueueSize: 10,
+	},
+	metrics: {
+		enabled: true,
+		reporter: {
+			type: "Console",
+			options: {
+				onlyChanges: true,
+				includes: "moleculer.**.bulkhead.**",
+
+			}
+		}
+	}
+});
+
+broker.createService({
+	name: "test",
+	actions: {
+		first: {
+			bulkhead: {
+				enabled: true,
+				concurrency: 1
+			},
+			async handler(ctx) {
+
+				await this.Promise.delay(_.random(500, 2500));
+
+				this.logger.info("First called.", ctx.params);
+
+				return ctx.params;
+			}
+		},
+
+		second: {
+			bulkhead: {
+				enabled: true,
+				concurrency: 2
+			},
+			async handler(ctx) {
+
+				await this.Promise.delay(_.random(500, 2500));
+
+				this.logger.info("Second called.", ctx.params);
+
+				return ctx.params;
+			}
+		},
+    }
+});
+
+let id = 1;
+broker.start()
+	.then(() => broker.repl())
+	.then(() => {
+		return broker.Promise.all(_.times(10, id => {
+        	return broker.call("test.second", { id });
+		}));
+	})
+	.then(() => {
+		setInterval(() => broker.call("test.second", { id: id++ }), 200);
+	})
+	.then(res => broker.logger.info("Done!"))
+	.catch(err => broker.logger.error(err.message));
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+Moleculer Runner
+   Moleculer Runner is a helper script that helps you running Moleculer projects.
+ With it you don’t need to create a ServiceBroker instance with options.
+
+ Instead you can create a moleculer.config.js file in the root of repo with broker options.
+
+ Then simply call the moleculer-runner in NPM script and it will automatically load the configuration file, create the broker and load the services
+
+ npm i -g moleculer-cli
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
